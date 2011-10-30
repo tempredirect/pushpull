@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================================================================================================== --><!-- This is the Root POM.xml for the NOS3.0 project . Maven uses this to build the entire NOS 3.0 project with all the modules.                            --><!-- This xml is inherited by all the individual module's POMs.Hence it should contain all the common maven-plugins and the third-party                     --><!-- dependencies/jars which are required by all the modules.                                                                                               --><!-- In order to use this the user should have maven installed and from command-line the following needs to be                                              --><!-- executed from the directory of this POM.xml                                                                                                            --><!-- mvn <goal>                                                                                                                                             --><!-- The list of the goals available:                                                                                                                       --><!-- 1. clean : clean the project , deleting all the classes, copied resources and jars.                                                                    --><!-- 2. compile : Only for doing the compilation of all the java code.                                                                                      --><!-- 3. install: compile all the code , compile and run unit tests and generates the jars of all the modules in their respective target folder.             --><!-- 4. tests : compile everything and run unit tests                                                                                                       --><!-- 5. emma:emma - compiles , instruments runs and displays the code coverage in html report                                                               --><!-- 6. emma:check - compiles, instruments and checks the code-coverage with specified thresholds.                                                          --><!-- 7. install surefire-report:report-only : after install , generates the unit test html report as well.                                                  --><!-- 8. findbugs: findbugs: tests, finds the bugs                                                                                                           --><!-- This generates all the classes, test xml files (if generated) , code coverage (if generated) and resulting jar                                         --><!-- in target directory of the modules.                                                                                                                    --><!--  ===================================================================================================================================================== --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ipaccess.nos</groupId>
+  <artifactId>pushpull</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>pusher-web</module>
+    <module>puller-web</module>
+  </modules>   
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <version>3.0.5.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>3.0.5.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javaee</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>5</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.2</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+</project>
